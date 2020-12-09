@@ -155,7 +155,7 @@ class Episode(object):
 
         if not dt:
             dt = time.time() # os.path.getmtime(self.filename) - we actually want the current time so the files in the directory have the same chronological order
-
+            time.sleep(1) # wait 1 second so all episodes don't have the same date
         return dt
 
     @property
