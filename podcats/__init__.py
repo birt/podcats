@@ -154,7 +154,7 @@ class Episode(object):
                 dt = None
 
         if not dt:
-            dt = os.path.getmtime(self.filename)
+            dt = time.time() # os.path.getmtime(self.filename) - we actually want the current time so the files in the directory have the same chronological order
 
         return dt
 
