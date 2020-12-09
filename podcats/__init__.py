@@ -37,7 +37,7 @@ __url__ = 'https://github.com/jakubroztocil/podcats'
 
 
 WEB_PATH = '/web'
-STATIC_PATH = '/static'
+STATIC_PATH = ''
 TEMPLATES_ROOT = os.path.join(os.path.dirname(__file__), 'templates')
 BOOK_COVER_EXTENSIONS = ('.jpg', '.jpeg', '.png')
 
