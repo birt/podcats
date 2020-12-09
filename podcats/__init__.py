@@ -201,6 +201,7 @@ class Channel(object):
     def __iter__(self):
         for root, _, files in os.walk(self.root_dir):
             relative_dir = root[len(self.root_dir):]
+            files = sorted(files)
             for fn in files:
                 filepath = os.path.join(root, fn)
                 mimetype = mimetypes.guess_type(filepath)[0]
@@ -214,7 +215,7 @@ class Channel(object):
             title=escape(self.title),
             description=escape(self.description),
             link=escape(self.link),
-            items=u''.join(episode.as_xml() for episode in sorted(self))
+            items=u''.join(episode.as_xml() for episode in self)
         ).strip()
 
     def as_html(self):
